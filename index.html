@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YOLOv8 Emotion Detection</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Real-time AI Vision</p>
+          <h1>YOLOv8 Emotion Detection Studio</h1>
+          <p class="subcopy">
+            Inspect curated inputs, trigger the YOLOv8 predictor, and observe how the
+            decoded expression compares to the source in a sleek dual monitor layout.
+          </p>
+        </div>
+      </header>
+
+      <main class="panel">
+        <section class="controls">
+          <label for="imageSelect">Pick an input image</label>
+          <div class="control-row">
+            <select id="imageSelect">
+              <option value="" disabled selected>Select one of 100 inputs</option>
+            </select>
+            <button id="predictBtn" class="primary">Predict</button>
+            <button id="resetBtn" class="ghost">Reset</button>
+          </div>
+          <p id="statusMessage" class="status hidden">Select an image to begin.</p>
+        </section>
+
+        <section class="preview-grid">
+          <article class="preview-card accent">
+            <h3>Input reference</h3>
+            <div class="image-frame empty" id="inputFrame">
+              <img id="inputPreview" alt="Selected input preview" />
+              <span class="placeholder">Awaiting selection…</span>
+            </div>
+          </article>
+
+          <article class="preview-card">
+            <h3>Predicted emotion</h3>
+            <div class="image-frame empty" id="outputFrame">
+              <img id="outputPreview" alt="Predicted output preview" />
+              <span class="placeholder">Run prediction to view.</span>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
